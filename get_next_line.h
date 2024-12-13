@@ -6,13 +6,13 @@
 /*   By: salhali <salhali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 15:12:12 by salhali           #+#    #+#             */
-/*   Updated: 2024/12/13 15:13:05 by salhali          ###   ########.fr       */
+/*   Updated: 2024/12/13 16:16:11 by salhali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-# ifndef GET_NEXT_LINE_BONUS_H
-# define GET_NEXT_LINE_BONUS_H
+# ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
 # define BUFFER_SIZE 42

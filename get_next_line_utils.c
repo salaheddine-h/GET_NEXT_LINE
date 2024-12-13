@@ -6,7 +6,7 @@
 /*   By: salhali <salhali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 16:57:16 by salhali           #+#    #+#             */
-/*   Updated: 2024/12/13 15:09:45 by salhali          ###   ########.fr       */
+/*   Updated: 2024/12/13 16:29:11 by salhali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ size_t	ft_strlen(const char *str)
 
 char	*ft_strchr(const char *s, int c)
 {
+	if(!s) 
+		return(NULL);
 	int	i;
 	unsigned char	ch;
 

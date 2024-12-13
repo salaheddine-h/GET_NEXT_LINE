@@ -6,11 +6,11 @@
 /*   By: salhali <salhali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 19:10:00 by salhali           #+#    #+#             */
-/*   Updated: 2024/12/13 14:43:58 by salhali          ###   ########.fr       */
+/*   Updated: 2024/12/13 16:29:47 by salhali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "get_next_line_bonus.h"
+# include "get_next_line.h"
 
 char	*ft_read(int fd, char *storage)
 {
@@ -63,9 +63,9 @@ char	*ft_line(char *storage)
 	}
 	while (j < i)
 	{
-		line[j] = storage[i];
+		line[j] = storage[j];
 		j++;
-		i++;
+
 	}
 	line[j] = '\0';
 	return (line);
@@ -104,8 +104,8 @@ char	*get_next_line(int fd)
 	char		*line;
 
 	storage = ft_read(fd, storage);
-	//if (!storage)
-	//	return (free(storage), storage = NULL, NULL);
+	if (!storage)
+		return (free(storage), storage = NULL, NULL);
 	line = ft_line(storage);
 	if (!line)
 		return (free(storage), storage = NULL, NULL);
