@@ -6,46 +6,40 @@
 /*   By: salhali <salhali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 16:57:16 by salhali           #+#    #+#             */
-/*   Updated: 2024/12/13 16:29:11 by salhali          ###   ########.fr       */
+/*   Updated: 2024/12/14 00:20:51 by salhali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen(char *s)
 {
-	size_t	len;
+	size_t	i;
 
-	if (!str)
+	i = 0;
+	if (!s)
 		return (0);
-	len = 0;
-	while (str[len] != '\0')
-		len++;
-	return (len);
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(char *s, int c)
 {
-	if(!s) 
-		return(NULL);
 	int	i;
-	unsigned char	ch;
 
-	ch = (unsigned char)c;
 	i = 0;
-	while (s[i])
+	if (!s)
+		return (0);
+	if (c == '\0')
+		return ((char *)&s[ft_strlen(s)]);
+	while (s[i] != '\0')
 	{
-		if ((unsigned char)s[i] == ch)
-		{
+		if (s[i] == (char) c)
 			return ((char *)&s[i]);
-		}
 		i++;
 	}
-	if (ch == '\0')
-	{
-		return ((char *)&s[i]);
-	}
-	return (NULL);
+	return (0);
 }
 
 char	*ft_strjoin(char *s1, char *s2)
@@ -73,26 +67,4 @@ char	*ft_strjoin(char *s1, char *s2)
 		dst[i++] = s2[j++];
 	dst[i] = '\0';
 	return (dst);
-}
-
-char	*ft_strdup(const char *s1)
-{
-	size_t	len_s;
-	char	*s;
-	int		i;
-
-	if (!s1)
-		return (NULL);
-	len_s = ft_strlen(s1);
-	s = malloc(len_s + 1);
-	if (!s)
-		return (NULL);
-	i = 0;
-	while (s1[i])
-	{
-		s[i] = s1[i];
-		i++;
-	}
-	s[i] = '\0';
-	return (s);
 }
