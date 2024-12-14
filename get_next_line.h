@@ -6,7 +6,7 @@
 /*   By: salhali <salhali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 15:12:12 by salhali           #+#    #+#             */
-/*   Updated: 2024/12/14 00:22:17 by salhali          ###   ########.fr       */
+/*   Updated: 2024/12/14 12:37:09 by salhali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # include <fcntl.h>
 
 char	*get_next_line(int fd);
+char	*ft_strdup(char *s);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strchr(char *s, int c);
 size_t	ft_strlen(char *s);

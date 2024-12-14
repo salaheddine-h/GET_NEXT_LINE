@@ -6,7 +6,7 @@
 /*   By: salhali <salhali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 16:57:16 by salhali           #+#    #+#             */
-/*   Updated: 2024/12/14 00:20:51 by salhali          ###   ########.fr       */
+/*   Updated: 2024/12/14 12:55:09 by salhali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,27 +44,46 @@ char	*ft_strchr(char *s, int c)
 
 char	*ft_strjoin(char *s1, char *s2)
 {
-	char	*dst;
+	size_t	(i), (j);
+	char	*str;
 
-	int i, (j);
 	if (!s1)
-		return (ft_strdup(s2));
-	if (!s2)
-		return (ft_strdup(s1));
-	if (!s1 && !s2)
-		return (NULL);
-	dst = malloc(((ft_strlen(s1) + ft_strlen(s2)) + 1));
-	if (!dst)
-		return (NULL);
-	i = 0;
-	while (s1[i])
 	{
-		dst[i] = s1[i];
+		s1 = (char *)malloc(1 * sizeof(char));
+		s1[0] = '\0';
+	}
+	if (!s1 || !s2)
+		return (NULL);
+	str = malloc(sizeof(char) * ((ft_strlen(s1) + ft_strlen(s2)) + 1));
+	if (str == NULL)
+		return (NULL);
+	i = -1;
+	j = 0;
+	if (s1)
+		while (s1[++i])
+			str[i] = s1[i];
+	while (s2[j])
+		str[i++] = s2[j++];
+	str[ft_strlen(s1) + ft_strlen(s2)] = '\0';
+	return (free(s1), str);
+}
+
+char	*ft_strdup(char *s)
+{
+	char	*str;
+	size_t	s_len;
+	size_t	i;
+
+	s_len = ft_strlen(s);
+	str = malloc(sizeof(char) * s_len + 1);
+	if(!str)
+		return(NULL);
+	i = 0;
+	while(s[i] != '\0')
+	{
+		str[i] = s[i];
 		i++;
 	}
-	j = 0;
-	while (s2[j])
-		dst[i++] = s2[j++];
-	dst[i] = '\0';
-	return (dst);
+	str[i] = '\0';
+	return(str);
 }
