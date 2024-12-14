@@ -6,7 +6,7 @@
 /*   By: salhali <salhali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 19:10:00 by salhali           #+#    #+#             */
-/*   Updated: 2024/12/14 00:15:20 by salhali          ###   ########.fr       */
+/*   Updated: 2024/12/14 14:21:51 by salhali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ char	*ft_get_line(int fd, char *line)
 			free(buffer);
 			return (NULL);
 		}
-		//check 0 
+		if(read_bytes == 0)
+			break;
 		buffer[read_bytes] = '\0';
 		line = ft_strjoin(line, buffer);
 	}
