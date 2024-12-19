@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 # include "get_next_line.h"
-
+///FOCUS 
 char	*ft_get_line(int fd, char *line)
 {
 	char	*buffer;
